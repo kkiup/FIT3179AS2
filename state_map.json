@@ -8,7 +8,7 @@
     {
     "data": {
     "url":
-   "https://raw.githubusercontent.com/kkiup/3179AS2/main/js/us_state.typojson"
+   "https://raw.githubusercontent.com/kkiup/FIT3179AS2/main/us_state.typojson"
    ,
     "format": {"type": "topojson", "feature": "kk.geo"}
     },
