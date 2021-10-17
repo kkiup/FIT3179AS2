@@ -1,0 +1,47 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 200,
+    "height": 200,
+    "title": "Shark Attack By State",
+    "projection": {"type": "albersUsa"},
+    "layer": [
+    {
+    "data": {
+    "url":
+   "https://raw.githubusercontent.com/kkiup/3179AS2/main/js/us_state.typojson"
+   ,
+    "format": {"type": "topojson", "feature": "kk.geo"}
+    },
+
+    "transform": [
+        {
+        "lookup": "properties.name",
+        "from": {
+        "data": {
+        "url": "https://raw.githubusercontent.com/kkiup/3179AS2/main/dataset/1_map_state.csv"
+        },
+        "key": "state",
+        "fields": ["scount"]
+        }
+        }
+        ],
+
+
+        "mark": {"type": "geoshape"},
+        "encoding": {
+        "color": {
+        "field": "scount",
+        "type": "quantitative",
+        "scale": {"scheme": "Reds"}
+        },
+        "tooltip": [
+        {"field": "properties.name", "type": "nominal", "title": "state"},
+        {"field": "scount", "type": "quantitative"}
+        ]
+        }
+       }
+
+
+
+    ]
+   }

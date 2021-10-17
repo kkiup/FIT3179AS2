@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 150,
+    "height": 180,
+    "data": {"url": "https://raw.githubusercontent.com/kkiup/3179AS2/main/dataset/3_stackbar_fatal.csv"},
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "timeUnit": "year",
+        "field": "Year",
+        "type": "ordinal",
+        "title": "year"
+      },
+      "y": {
+        "aggregate": "count",
+        "type": "quantitative"
+      },
+      "color": {
+        "field": "Fatal (Y/N)",
+        "type": "nominal",
+        "scale": {
+          "domain": ["N", "Y","UNKNOWN"],
+          "range": ["#e7ba52", "#c7c7c7","#9467bd"]
+        },
+        "title": "Wheher Fatal?"
+      }
+    }
+  }
+  

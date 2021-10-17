@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiple Visualisations | An Example</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+
+</head>
+<body>
+
+ <div class="page">
+
+   <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-2-3">
+        <div align = "left">
+        <h1>Shark Attack in U.S.</h1>
+        <p>With the increase in water recreation in recent years, there seems to be an increase 
+            in shark attacks, but is this really the case? This dataset file 
+            contains shark attacks from around the world, 
+            and I have chosen only the United States as the subject of my study.</p>
+        </div> 
+      
+      </div>
+
+      <div class="pure-u-1-3" >
+            <img src="shark.png" />
+      </div>
+    </div>
+  <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        
+        <div class="pure-u-1-3">
+          <div class="description description-left">
+            <h3>Why Florida?</h3>
+            <p>Using the two maps on the right, we can see that Florida has the 
+                highest frequency of shark attacks, and although shark attacks have occurred 
+                in other coastal states, they have all differed greatly from Florida in terms of numbers. 
+                Gavin Naylor, who manages ISAF said the strong tidal flow in the Ponce de Leon Inlet 
+                leads to more baitfish in the area, which in turn boosts shark numbers. And outside the inlet, 
+                on the Atlantic side, there is a patch of water good for surfers. 
+                The sharks are provoked when people splash their hands and kick their feet.
+            
+            </p>
+          </div>
+        </div>
+        <div class="pure-u-1-3">     
+          <div id="vis1" >
+        </div>
+        </div>
+
+        <div class="pure-u-1-3">     
+            <div id="vis6" >
+          </div>
+          </div>
+        
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div id="vis3"  class="vis-container"></div>
+        </div>
+        <div class="pure-u-1-3">
+          <div align = "center">
+            <h3>Are sharks more aggressive?</h3>
+            <p>The graph on the right shows a clear increasing trend in the number 
+                of shark attacks. One might think that this is due to the increased 
+                aggressiveness of the sharks, however, we should also consider the 
+                dissemination of information. In the past, people could only convey n
+                ews with the help of newspapers and magazines, but nowadays, the advent 
+                of computers has made it easier to keep statistics. The graph on the left 
+                shows that sharks are far less of a threat than people think.
+
+                </p>
+          </div>
+        </div>
+        <div class="pure-u-1-3">
+            <div id="vis2"  class="vis-container"></div>
+          </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-3">
+        <div class="description description-left">
+          <h3>Why Shark Attack?</h3>
+          <p>The pie chart on the far right shows that most of the time the shark 
+              just attacks people for no reason, perhaps it is just trying to check 
+              if the object in front of it is edible by its teeth. Through the chart "What Was Victim Doing",
+              We can see that these behaviours can easily be misunderstood 
+              by the shark, and perhaps the shark sees them as provocative.</p>
+        </div>
+      </div>
+      <div class="pure-u-1-3">
+        <div id="vis4"  class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-3">
+        <div id="vis5"  class="vis-container"></div>
+      </div>
+    
+    </div>
+ 
+   
+<script type="text/javascript">
+  var specVis1 = "county_map.json";
+  var specVis2= "count_area.json";
+  var specVis3= "ftal_stack.json";
+  var specVis4= "act_scatter.json";
+  var specVis5= "type_pie.json";
+  var specVis6 = "state_map.json";
+
+  vegaEmbed('#vis1', specVis1, {"actions": false});
+  
+   vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis5', specVis5, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis6', specVis6, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+</body>
+</html>

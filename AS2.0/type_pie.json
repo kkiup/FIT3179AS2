@@ -1,0 +1,43 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Shark Attack Type",
+    "data": {
+      "values": [
+        {"category": "Boating", "value": 52, "order": 1},
+        {"category": "Invalid", "value": 193, "order": 2},
+        {"category": "Provoked", "value": 208, "order": 3},
+        {"category": "Sea Disaster", "value": 32, "order": 4},
+        {"category": "Unprovoke", "value": 1721, "order": 5}
+      ]
+    },
+    "mark": {"type": "arc", "outerRadius": 80},
+    "encoding": {
+      "theta": {
+        "field": "value", "type": "quantitative",
+        "scale": {"range": [2.35619449, 8.639379797]},
+        "stack": true
+      },
+      "color": {
+        "field": "category", "type": "nominal",
+        "scale": {
+          "domain": ["Boating", "Invalid", "Provoked","Sea Disaster","Unprovoke"],
+          "range": ["#416D9D", "#674028", "#920753","#17202A","#626567"]
+        },
+        "legend": {
+          "orient": "none",
+          "title": null,
+          "columns": 1,
+          "legendX": 200,
+          "legendY": 80
+        }
+      },
+      "order": {
+        "field": "order"
+      },
+      "tooltip": [
+          {"field": "category", "type": "nominal", "title": "type"},
+          {"field": "value", "type": "quantitative"}
+          ]
+    }
+  }
+  
