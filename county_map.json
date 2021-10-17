@@ -16,7 +16,7 @@
     },
     {
     "data": {
-    "url": "https://raw.githubusercontent.com/kkiup/3179AS2/main/dataset/1_map_location.csv"
+    "url": "https://raw.githubusercontent.com/kkiup/FIT3179AS2/main/dataset/1_map_location.csv"
     },
     "mark": {"type": "circle", "tooltip": {"content": "data"}},
     "encoding": {
